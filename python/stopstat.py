@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 import os
 import sys
 import json
@@ -53,7 +54,7 @@ try:
     response = ur.urlopen(MetLinkAPIv1StopDeparturesUrl)
     raw_json = response.read()
 except:
-    print "failed, maybe a bad stop code?"
+    print("failed, maybe a bad stop code?")
     sys.exit(1)
 
 if type(raw_json) != str:
@@ -62,7 +63,7 @@ if type(raw_json) != str:
 try:
     stop_departures = json.loads(raw_json)
 except:
-    print "failed parsing json, maybe a bad stop code?"
+    print("failed parsing json, maybe a bad stop code?")
     sys.exit(1)
 
 
